@@ -714,7 +714,6 @@ func migrateCloudwatchToPrometheus(cwd []*cloudwatchData) []*PrometheusMetric {
 			includeTimestamp := *c.AddCloudwatchTimestamp
 			if exportedDatapoint == nil && *c.NilToZero {
 				exportedDatapoint = &zero
-				includeTimestamp = false
 			}
 			if exportedDatapoint != nil {
 				promLabels := make(map[string]string)
